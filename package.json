@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Warning: no test specified\" && exit 0",
     "build": "NODE_ENV=production node_modules/.bin/webpack",
     "dev": "node_modules/.bin/webpack-dev-server --progress --colors --port 3000 --host 0.0.0.0 --content-base public/ --inline --hot"
   },
