@@ -6,36 +6,70 @@ import ReactDOM from 'react-dom'
 
 import Carousel from './Carousel'
 
-class NextEventsIntern extends React.Component {
-  render() {
-    return (
-      <ul>
-        <li>22. mars: Kosetirsdag</li>
-        <li>29. mars: Kosetirsdag</li>
-        <li>31. mars: Filmkveld</li>
-        <li>5. april: Kosetirsdag</li>
-        <li>9. april: Internfest v/HS</li>
-        <li>14. april: Filmkveld</li>
-        <li>15-18. april: Hyttetur</li>
-        <li>23. april: Internfest v/arr</li>
-        <li>30. april-2. mai: Danskebåttur</li>
-      </ul>
-    )
+import moment from 'moment-timezone'
+moment.locale('nb')
+moment.tz.setDefault('Europe/Oslo')
+
+let upcomingEventsPromise
+function getUpcomingEvents() {
+  if (!upcomingEventsPromise) {
+    upcomingEventsPromise = fetch('https://internt.cyb.no/api/cal/upcoming')
+      .then(response => {
+        if (!response.ok) {
+          return Promise.reject(new Error(response.statusText))
+        } else {
+          return response.json()
+        }
+      })
   }
+  return upcomingEventsPromise
 }
 
-class NextEventsPublic extends React.Component {
+class EventList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      events: []
+    }
+    getUpcomingEvents().then(data => {
+      console.log(data)
+      this.setState({
+        'events': data[props.eventGroup].slice(0, 10)
+      })
+    })
+  }
+
   render() {
-    return (
-      <ul>
-        <li>Kaféen er åpen hver ukedag kl 10-15.15. Hos oss får du en kopp kaffe for kun kr 5!</li>
-        <li>1. april kl 18: <a href="https://www.facebook.com/events/227212980961773/">Escape: The Prison Fest</a></li>
-        <li>4. april: Hverdagsinformatikk</li>
-        <li>7. april kl 12.15: Lunsj-foredrag - Studieteknikk</li>
-        <li>8. april kl 18: Fredagspub</li>
-        <li>13. april kl 16.30: Booster draft: SOI</li>
-      </ul>
-    )
+    if (!this.state.events.length) {
+      return null
+    } else {
+      let i = 0
+      let kafe = null
+      if (this.props.eventGroup === 'public') {
+        kafe = <li>Kaféen er åpen hver ukedag kl 10-15.15. Hos oss får du en kopp kaffe for kun kr 5!</li>
+      }
+
+      return (
+        <ul>
+          {kafe}
+          {this.state.events.map(event => {
+            let when = moment(event.start).format('ddd D. MMM')
+            if (moment(event.start).format('HH:mm') != '00:00') {
+              when += ' kl. ' + moment(event.start).format('HH:mm')
+            }
+            let what = event.summary
+            if (event.url && (this.props.eventGroup === 'intern' || !/^https:\/\/confluence./.test(event.url))) {
+              what = <a href={event.url}>{what}</a>
+            }
+            return (
+              <li key={i++}>
+                <span className="event-when">{when}:</span> {what}
+              </li>
+            )
+          })}
+        </ul>
+      )
+    }
   }
 }
 
@@ -47,10 +81,10 @@ domready(() => {
   }
 
   if (elm = document.getElementById("next-events-intern")) {
-    ReactDOM.render(<NextEventsIntern />, elm)
+    ReactDOM.render(<EventList eventGroup={'intern'} />, elm)
   }
 
   if (elm = document.getElementById("next-events-public")) {
-    ReactDOM.render(<NextEventsPublic />, elm)
+    ReactDOM.render(<EventList eventGroup={'public'} />, elm)
   }
 })

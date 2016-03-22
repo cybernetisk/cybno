@@ -14,6 +14,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel-loader'] },
+      { test: /\.json$/, loader: 'json' },
       { test: /\.css$/, loader: 'style!css' },
       { test: /\.scss$/, loader: 'style!css!sass' },
       { test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=10000&minetype=application/font-woff' },
