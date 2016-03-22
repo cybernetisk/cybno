@@ -1,0 +1,14 @@
+language: node_js
+sudo: false
+notifications:
+  slack:
+    rooms:
+      secure: aTWguKuxj9mB3hkNyoKysMtLgl2ArLmtUNZHOUjp9OekgIYUY2UpJp2ml0VKg686F1TquTznIcwmHT5dNuJ6X5Gl9D51rIfhcVfkV28DU20C8X9jWaaW1ZpnG+yyfJ5cx54qHTJzXKdvH6Z5SixRSzVVMoUoO+Bks68t3bVGSWGoA3444cfIVYwYv406m6GOsJBAdsEY1A5lB0s5vXNeTp4GgoeeNIUkzwM3D1GS/ZdwYq1JjuNYaU9OCFEt/SPvWgF8ph2iYIpd+J7yN1MnW487bIK5hwPl1A4DzgiezpL3mge66qKdwuVcQ3/ZS2l8VyOfWgVapBGN1UC9hb6lF8pPRZJQCF6zFIUcAM98COhCWJG4cVhhkilHFqXOInFBmj+rssqs8IGbFGOMmj3TnrWJvOPXEx5r1ONDdX64XvvcUJ/cnJsfbCVaMZjlp8wDjdYoj98P/eeGrp2KRaSLnAuTs7O3HGUTKO8JZo8kJWBPUL1jkwXIyMzuaGajMv55tStO9Bv2qL4aLkhb6QDxKeCBOHeVmPSGscKWYmdb6jYgs6b0/jAjeef7LFBrsQlL/882NItTuUKUcVVzguxCxNy7R6Zx6edtORXswyRgLEVxEMtXY+YvXntzrhl5YwdIUltn5eBR2beFGy5jqX8nEY3tGOjxyAWl4XZNth88RaQ=
+deploy:
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
+cache:
+  directories:
+  - node_modules

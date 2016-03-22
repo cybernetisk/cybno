@@ -1,0 +1,29 @@
+@import '~foundation-sites/scss/foundation.scss';
+//@import '~motion-ui/dist/motion-ui.css';
+
+@include foundation-everything();
+
+.page-logo {
+  display: inline-block;
+  padding: 0 0 0 1rem;
+
+  img {
+    height: 2.2rem;
+  }
+}
+
+.page-dl {
+  dt {
+    @include breakpoint(large) {
+      clear: left;
+      float: left;
+      min-width: 14rem;
+    }
+    margin: 0;
+    padding-right: 1rem;
+  }
+}
+
+.page-bottom {
+  margin-bottom: 1rem;
+}
