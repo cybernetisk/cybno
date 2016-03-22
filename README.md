@@ -1,4 +1,4 @@
-# cybsite2016
+# cyb.no
 
 ## Bygge siden
 ```bash
