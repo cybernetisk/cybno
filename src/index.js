@@ -43,6 +43,16 @@ class NextEventsPublic extends React.Component {
   }
 }
 
-ReactDOM.render(<Carousel />, document.getElementById("page-carousel"))
-ReactDOM.render(<NextEventsIntern />, document.getElementById("next-events-intern"))
-ReactDOM.render(<NextEventsPublic />, document.getElementById("next-events-public"))
+let elm;
+
+if (elm = document.getElementById("page-carousel")) {
+  ReactDOM.render(<Carousel />, elm)
+}
+
+if (elm = document.getElementById("next-events-intern")) {
+  ReactDOM.render(<NextEventsIntern />, elm)
+}
+
+if (elm = document.getElementById("next-events-public")) {
+  ReactDOM.render(<NextEventsPublic />, elm)
+}
