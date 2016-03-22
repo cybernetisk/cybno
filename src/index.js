@@ -1,5 +1,6 @@
 import "./app.scss"
 
+import domready from 'domready'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -38,16 +39,18 @@ class NextEventsPublic extends React.Component {
   }
 }
 
-let elm;
+domready(() => {
+  let elm;
 
-if (elm = document.getElementById("page-carousel")) {
-  ReactDOM.render(<Carousel />, elm)
-}
+  if (elm = document.getElementById("page-carousel")) {
+    ReactDOM.render(<Carousel />, elm)
+  }
 
-if (elm = document.getElementById("next-events-intern")) {
-  ReactDOM.render(<NextEventsIntern />, elm)
-}
+  if (elm = document.getElementById("next-events-intern")) {
+    ReactDOM.render(<NextEventsIntern />, elm)
+  }
 
-if (elm = document.getElementById("next-events-public")) {
-  ReactDOM.render(<NextEventsPublic />, elm)
-}
+  if (elm = document.getElementById("next-events-public")) {
+    ReactDOM.render(<NextEventsPublic />, elm)
+  }
+})
