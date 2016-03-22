@@ -22,6 +22,8 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/),
+
     production && new webpack.optimize.DedupePlugin() || noop,
     production && new webpack.optimize.UglifyJsPlugin({sourceMap: false}) || noop,
     production && new webpack.NoErrorsPlugin() || noop,

@@ -6,9 +6,9 @@ import ReactDOM from 'react-dom'
 
 import Carousel from './Carousel'
 
-import moment from 'moment-timezone'
+import moment from 'moment'
 moment.locale('nb')
-moment.tz.setDefault('Europe/Oslo')
+//moment.tz.setDefault('Europe/Oslo')
 
 let upcomingEventsPromise
 function getUpcomingEvents() {
