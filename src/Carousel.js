@@ -27,9 +27,9 @@ export default class Carousel extends React.Component {
     return (
       <Slider {...settings}>
         {images.map(image => (
-          <div>
+          <div key={image[0]}>
             <div className="carousel-item">
-              <img key={image[0]} src={image[0]} />
+              <img src={image[0]} />
               <figcaption>{image[1]}</figcaption>
             </div>
           </div>
