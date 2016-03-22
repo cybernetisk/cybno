@@ -1,9 +1,4 @@
-//window.jQuery = require("jquery")
-//require("foundation-sites")
-
 import "./app.scss"
-
-//jQuery(document).foundation()
 
 import React from 'react'
 import ReactDOM from 'react-dom'
