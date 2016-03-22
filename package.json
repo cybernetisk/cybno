@@ -5,7 +5,6 @@
   "scripts": {
     "test": "echo \"Warning: no test specified\" && exit 0",
     "build": "NODE_ENV=production node_modules/.bin/webpack",
-    "build-travis": "NODE_ENV=production webpack",
     "dev": "node_modules/.bin/webpack-dev-server --progress --colors --port 3000 --host 0.0.0.0 --content-base public/ --inline --hot"
   },
   "author": "",
