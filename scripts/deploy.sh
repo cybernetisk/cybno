@@ -25,9 +25,9 @@ npm run build
 
 echo "Deploying new files"
 
-rsync -arv --delete public/ cyb@login.ifi.uio.no:www_docs/2016/
+rsync -arv --delete -e "ssh -o StrictHostKeyChecking=no" public/ cyb@login.ifi.uio.no:www_docs/2016/
 
-ssh cyb@login.ifi.uio.no /bin/bash <<EOF
+ssh -o StrictHostKeyChecking=no cyb@login.ifi.uio.no /bin/bash <<EOF
   set -e
   cd www_docs/2016/
   chmod a+r . -R
