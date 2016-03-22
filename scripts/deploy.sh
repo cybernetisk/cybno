@@ -21,7 +21,7 @@ fi
 
 cd ..
 
-npm run build
+npm run build-travis
 
 echo "Deploying new files"
 
