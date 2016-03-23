@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var production = process.env.NODE_ENV === 'production';
 var noop = function () {};
@@ -15,14 +16,15 @@ module.exports = {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel-loader'] },
       { test: /\.json$/, loader: 'json' },
-      { test: /\.css$/, loader: 'style!css' },
-      { test: /\.scss$/, loader: 'style!css!sass' },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
+      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader') },
       { test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=10000&minetype=application/font-woff' },
       { test: /\.(ttf|eot|svg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' },
     ]
   },
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/),
+    new ExtractTextPlugin("[name].css"),
 
     production && new webpack.optimize.DedupePlugin() || noop,
     production && new webpack.optimize.UglifyJsPlugin({sourceMap: false}) || noop,

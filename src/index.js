@@ -6,9 +6,8 @@ import ReactDOM from 'react-dom'
 
 import Carousel from './Carousel'
 
-import moment from 'moment'
-moment.locale('nb')
-//moment.tz.setDefault('Europe/Oslo')
+const days = 'sø._ma._ti._on._to._fr._lø.'.split('_')
+const months = 'jan._feb._mars_april_mai_juni_juli_aug._sep._okt._nov._des.'.split('_')
 
 let upcomingEventsPromise
 function getUpcomingEvents() {
@@ -47,24 +46,35 @@ class EventList extends React.Component {
     })
   }
 
+  getDay(d) {
+    return days[d.getDay()]
+  }
+
+  getMonth(d) {
+    return months[d.getMonth()]
+  }
+
+  getTime(d) {
+    return ("0" + d.getHours()).slice(-2) + ':' + ("0" + d.getMinutes()).slice(-2)
+  }
+
   renderWhen(event) {
-    const startObj = moment(event.start)
-    const endObj = moment(event.end)
+    const start = new Date(event.start)
+    const end = new Date(event.end)
 
     // it is a all-day-event if it only have date and no time
     const isAllDay = event.start.length === 10
     const isRange = isAllDay && event.start != event.end
-    const isRangeSameMonth = isRange && startObj.format('MM') == endObj.format('MM')
+    const isRangeSameMonth = isRange && start.getMonth() == end.getMonth()
 
-    const start = isRangeSameMonth ? startObj.format('ddd D.') : startObj.format('ddd D. MMM')
+    let when = this.getDay(start) + ' ' + start.getDate() + '.' + (isRangeSameMonth ? '' : ' ' + this.getMonth(start))
 
-    let when = start
     if (!isAllDay) {
-      when += ' kl. ' + startObj.format('HH:mm')
+      when += ' kl. ' + this.getTime(start)
     }
 
     if (isRange) {
-      when += '-' + endObj.format('ddd D. MMM')
+      when += '-' + this.getDay(end) + ' ' + end.getDate() + '. ' + this.getMonth(end)
     }
 
     return when
