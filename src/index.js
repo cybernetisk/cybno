@@ -33,7 +33,6 @@ class EventList extends React.Component {
       error: null
     }
     getUpcomingEvents().then(data => {
-      console.log(data)
       this.setState({
         events: data[props.eventGroup].slice(0, 10),
         isLoading: false
