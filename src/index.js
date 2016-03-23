@@ -29,12 +29,20 @@ class EventList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      events: []
+      events: [],
+      isLoading: true,
+      error: null
     }
     getUpcomingEvents().then(data => {
       console.log(data)
       this.setState({
-        'events': data[props.eventGroup].slice(0, 10)
+        events: data[props.eventGroup].slice(0, 10),
+        isLoading: false
+      })
+    }, test => {
+      this.setState({
+        isLoading: false,
+        error: true
       })
     })
   }
@@ -73,30 +81,37 @@ class EventList extends React.Component {
   }
 
   render() {
-    if (!this.state.events.length) {
-      return null
-    } else {
-      let i = 0
-      let kafe = null
-      if (this.props.eventGroup === 'public') {
-        kafe = <li>Kaféen er åpen hver ukedag kl 10-15.15. Hos oss får du en kopp kaffe for kun kr 5!</li>
-      }
-
-      return (
-        <ul>
-          {kafe}
-          {this.state.events.map(event => {
-            const when = this.renderWhen(event)
-            const what = this.renderWhat(event)
-            return (
-              <li key={i++}>
-                <span className="event-when">{when}:</span> {what}
-              </li>
-            )
-          })}
-        </ul>
-      )
+    if (this.state.isLoading) {
+      return <p>Henter liste...</p>
     }
+
+    if (this.state.error) {
+      return <p>Feil: Klarte ikke å hente liste.</p>;
+    }
+
+    if (!this.state.events.length) {
+      return <p>Ingen hendelser ble funnet.</p>
+    }
+
+    let kafe = null
+    if (this.props.eventGroup === 'public') {
+      kafe = <li>Kaféen er åpen hver ukedag kl 10-15.15. Hos oss får du en kopp kaffe for kun kr 5!</li>
+    }
+
+    return (
+      <ul>
+        {kafe}
+        {this.state.events.map((event, i) => {
+          const when = this.renderWhen(event)
+          const what = this.renderWhat(event)
+          return (
+            <li key={i}>
+              <span className="event-when">{when}:</span> {what}
+            </li>
+          )
+        })}
+      </ul>
+    )
   }
 }
 
