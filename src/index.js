@@ -39,6 +39,39 @@ class EventList extends React.Component {
     })
   }
 
+  renderWhen(event) {
+    const startObj = moment(event.start)
+    const endObj = moment(event.end)
+
+    // it is a all-day-event if it only have date and no time
+    const isAllDay = event.start.length === 10
+    const isRange = isAllDay && event.start != event.end
+    const isRangeSameMonth = isRange && startObj.format('MM') == endObj.format('MM')
+
+    const start = isRangeSameMonth ? startObj.format('ddd D.') : startObj.format('ddd D. MMM')
+
+    let when = start
+    if (!isAllDay) {
+      when += ' kl. ' + startObj.format('HH:mm')
+    }
+
+    if (isRange) {
+      when += '-' + endObj.format('ddd D. MMM')
+    }
+
+    return when
+  }
+
+  renderWhat(event) {
+    let what = event.summary
+
+    if (event.url && (this.props.eventGroup === 'intern' || !/^https:\/\/confluence./.test(event.url))) {
+      what = <a href={event.url}>{what}</a>
+    }
+
+    return what
+  }
+
   render() {
     if (!this.state.events.length) {
       return null
@@ -53,14 +86,8 @@ class EventList extends React.Component {
         <ul>
           {kafe}
           {this.state.events.map(event => {
-            let when = moment(event.start).format('ddd D. MMM')
-            if (moment(event.start).format('HH:mm') != '00:00') {
-              when += ' kl. ' + moment(event.start).format('HH:mm')
-            }
-            let what = event.summary
-            if (event.url && (this.props.eventGroup === 'intern' || !/^https:\/\/confluence./.test(event.url))) {
-              what = <a href={event.url}>{what}</a>
-            }
+            const when = this.renderWhen(event)
+            const what = this.renderWhat(event)
             return (
               <li key={i++}>
                 <span className="event-when">{when}:</span> {what}
