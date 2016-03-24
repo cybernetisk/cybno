@@ -26,6 +26,10 @@ module.exports = {
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/),
     new ExtractTextPlugin("[name].css"),
 
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    }),
+
     production && new webpack.optimize.DedupePlugin() || noop,
     production && new webpack.optimize.UglifyJsPlugin({sourceMap: false}) || noop,
     production && new webpack.NoErrorsPlugin() || noop,
