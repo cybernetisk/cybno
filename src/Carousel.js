@@ -22,10 +22,9 @@ export default class Carousel extends React.Component {
       //['KAFEBILDE', 'Kafé i Escape hver ukedag kl 10 til kl 15.15! Kom innom for en billig studentkaffe!'],
       ['http://cyb.no/2016-assets/vannspeil.jpg', 'Studentkafeen og -baren Escape ligger i kjelleren på Ole-Johan Dahls hus ved Forskningsparken.'],
       ['http://cyb.no/2016-assets/pub.jpg', 'Escape tilbyr en romslig og hyggelig samlingsplass for studenter.'],
-      ['http://cyb.no/2016-assets/kilofest.jpg', 'Kilofest'],
+      ['http://cyb.no/2016-assets/kilofest.jpg', 'Fadderuka 2014 ble avsluttet med KiloFEST i Escape.'],
       ['http://cyb.no/2016-assets/faglig-escape.jpg', 'Vi arrangerer både sosiale og faglige eventer.'],
       ['http://cyb.no/2016-assets/styrekurs.jpg', 'Som frivillig får man oppleve ting også utenfor instituttet, som her fra teambuilding på styrekurs for hoved- og kjellerstyret på farmasihytta.'],
-      ['http://cyb.no/2016-assets/projektor.jpg', 'AV-utstyr']
     ]
 
     return (
