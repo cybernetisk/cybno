@@ -12,7 +12,10 @@ const months = 'jan._feb._mars_april_mai_juni_juli_aug._sep._okt._nov._des.'.spl
 let upcomingEventsPromise
 function getUpcomingEvents() {
   if (!upcomingEventsPromise) {
-    upcomingEventsPromise = fetch('https://internt.cyb.no/api/cal/upcoming')
+    let headers = new Headers()
+    headers.append('Accept', 'application/json')
+    let request = new Request('https://internt.cyb.no/api/cal/upcoming', {headers})
+    upcomingEventsPromise = fetch(request)
       .then(response => {
         if (!response.ok) {
           return Promise.reject(new Error(response.statusText))
