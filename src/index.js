@@ -14,7 +14,7 @@ function getUpcomingEvents() {
   if (!upcomingEventsPromise) {
     let headers = new Headers()
     headers.append('Accept', 'application/json')
-    let request = new Request('https://internt.cyb.no/api/cal/upcoming', {headers})
+    let request = new Request('https://in.cyb.no/api/cal/upcoming', {headers})
     upcomingEventsPromise = fetch(request)
       .then(response => {
         if (!response.ok) {
