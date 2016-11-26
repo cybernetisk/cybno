@@ -108,7 +108,8 @@ class EventList extends React.Component {
     let kafe = null
     if (this.props.eventGroup === 'public') {
       //kafe = <li>Kaféen holder stengt grunnet eksamensperiode og sommerperiode. Velkommen tilbake til kaféen under fadderukene til høsten!</li>
-      kafe = <li>Kaféen er åpen hver ukedag kl 10-15.15. Hos oss får du en kopp kaffe for kun kr 5!</li>
+      kafe = <li>Kaféen holder stengt grunnet eksamensperiode og jul. Velkommen tilbake til kaféen når den åpner en gang på nyåret!</li>
+      //kafe = <li>Kaféen er åpen hver ukedag kl 10-15.15. Hos oss får du en kopp kaffe for kun kr 5!</li>
     }
 
     return (
