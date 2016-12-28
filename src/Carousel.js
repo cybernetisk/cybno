@@ -25,6 +25,13 @@ export default class Carousel extends React.Component {
       ['http://cyb.no/2016-assets/kilofest.jpg', 'Fadderuka 2014 ble avsluttet med KiloFEST i Escape.'],
       ['http://cyb.no/2016-assets/faglig-escape.jpg', 'Vi arrangerer både sosiale og faglige eventer.'],
       ['http://cyb.no/2016-assets/styrekurs.jpg', 'Som frivillig får man oppleve ting også utenfor instituttet, som her fra teambuilding på styrekurs for hoved- og kjellerstyret på farmasihytta.'],
+      ['http://cyb.no/2016-assets/baal.jpg', 'Hyttetur for interne er noe vi også tilbyr.'],
+      ['http://cyb.no/2016-assets/pub.jpg', 'Som regel god stemning og masse folk på fredagspub.'],
+      ['http://cyb.no/2016-assets/chill.jpg', 'Escape i kafetid.'],
+      ['http://cyb.no/2016-assets/foredrag.jpg', 'Vi arrangerer også foredrag med faglig innhold.'],
+      ['http://cyb.no/2016-assets/isbading.jpg', 'En staut gjeng som badet ute i november.'],
+      ['http://cyb.no/2016-assets/kafe.jpg', 'Ønsker du å være en barista? Vi trenger alltid folk.'],
+      ['http://cyb.no/2016-assets/konsert.jpg', 'Jubileumskonser.'],
     ]
 
     return (
