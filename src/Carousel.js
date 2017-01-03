@@ -28,10 +28,10 @@ export default class Carousel extends React.Component {
       ['http://cyb.no/2016-assets/baal_fikset.jpg', 'Hyttetur for interne er noe vi også tilbyr.'],
       ['http://cyb.no/2016-assets/pub.jpg', 'Som regel god stemning og masse folk på fredagspub.'],
       ['http://cyb.no/2016-assets/chill.jpg', 'Escape i kafetid.'],
-      ['http://cyb.no/2016-assets/foredragi_fikset.jpg', 'Vi arrangerer også foredrag med faglig innhold.'],
+      ['http://cyb.no/2016-assets/foredrag_fikset.jpg', 'Vi arrangerer også foredrag med faglig innhold.'],
       ['http://cyb.no/2016-assets/isbading_fikset.jpg', 'En staut gjeng som badet ute i november.'],
-      ['http://cyb.no/2016-assets/kafe_fikset.jpg', 'Ønsker du å være en barista? Vi trenger alltid folk.'],
-      ['http://cyb.no/2016-assets/konsert_fikset.jpg', 'Jubileumskonser.'],
+      ['http://cyb.no/2016-assets/kafe_fikset.png', 'Ønsker du å være en barista? Vi trenger alltid folk.'],
+      ['http://cyb.no/2016-assets/konsert_fikset.png', 'Jubileumskonser.'],
     ]
 
     return (
