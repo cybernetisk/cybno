@@ -27,7 +27,7 @@ export default class Carousel extends React.Component {
       ['http://cyb.no/2016-assets/styrekurs.jpg', 'Som frivillig får man oppleve ting også utenfor instituttet, som her fra teambuilding på styrekurs for hoved- og kjellerstyret på farmasihytta.'],
       ['http://cyb.no/2016-assets/baal_fikset.jpg', 'Hyttetur for interne er noe vi også tilbyr.'],
       ['http://cyb.no/2016-assets/pub.jpg', 'Som regel god stemning og masse folk på fredagspub.'],
-      ['http://cyb.no/2016-assets/chill.jpg', 'Escape i kafetid.'],
+      ['http://cyb.no/2016-assets/chill.jpg', 'Escape i bartid.'],
       ['http://cyb.no/2016-assets/foredrag_fikset.jpg', 'Vi arrangerer også foredrag med faglig innhold.'],
       ['http://cyb.no/2016-assets/kafe_fikset.png', 'Ønsker du å være en barista? Vi trenger alltid folk.'],
       ['http://cyb.no/2016-assets/konsert_fikset.png', 'Jubileumskonser.'],
