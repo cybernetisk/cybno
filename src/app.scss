@@ -1,7 +1,7 @@
 @import 'vars';
 
 @include foundation-global-styles;
-@include foundation-grid;
+@include foundation-xy-grid-classes;
 @include foundation-typography;
 @include foundation-menu;
 @include foundation-top-bar;
@@ -9,8 +9,13 @@
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
-.top-bar {
-  font-size: 1.2rem;
+body > header.top-bar {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+
+  .menu-text {
+    line-height: 2rem;
+  }
 }
 
 .page-logo {

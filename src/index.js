@@ -1,7 +1,8 @@
-import "./app.scss"
+import './app.scss'
 
 import domready from 'domready'
 import React from 'react'
+import { AppContainer } from 'react-hot-loader'
 import ReactDOM from 'react-dom'
 
 import Carousel from './Carousel'
@@ -109,22 +110,22 @@ class EventList extends React.Component {
     if (this.props.eventGroup === 'public') {
       //kafe = <li>Kaféen holder stengt fra 15. Mai grunnet eksamensperiode og sommerperiode. Velkommen tilbake til kaféen under fadderukene til høsten!</li>
       //kafe = <li>Kaféen holder stengt grunnet eksamensperiode og jul. Velkommen tilbake til kaféen når den åpner 16. januar!</li>
-      kafe = <li>Kaféen er åpen hver ukedag kl 10-15.15. Hos oss får du en kopp kaffe for kun kr 5!</li>
+      kafe = <p>Kaféen er åpen hver ukedag kl 10-15.15. Hos oss får du en kopp kaffe for kun kr 5!</p>
     }
 
     return (
-      <ul>
-        {kafe}
-        {this.state.events.map((event, i) => {
-          const when = this.renderWhen(event)
-          const what = this.renderWhat(event)
-          return (
-            <li key={i}>
-              <span className="event-when">{when}:</span> {what}
-            </li>
-          )
-        })}
-      </ul>
+        {kafe},
+        <ul>
+          {this.state.events.map((event, i) => {
+            const when = this.renderWhen(event)
+            const what = this.renderWhat(event)
+            return (
+              <li key={i}>
+                <span className="event-when">{when}:</span> {what}
+              </li>
+            )
+          })}
+        </ul>
     )
   }
 }
@@ -133,14 +134,14 @@ domready(() => {
   let elm;
 
   if (elm = document.getElementById("page-carousel")) {
-    ReactDOM.render(<Carousel />, elm)
+    ReactDOM.render(<AppContainer><Carousel /></AppContainer>, elm)
   }
 
   if (elm = document.getElementById("next-events-intern")) {
-    ReactDOM.render(<EventList eventGroup={'intern'} />, elm)
+    ReactDOM.render(<AppContainer><EventList eventGroup={'intern'} /></AppContainer>, elm)
   }
 
   if (elm = document.getElementById("next-events-public")) {
-    ReactDOM.render(<EventList eventGroup={'public'} />, elm)
+    ReactDOM.render(<AppContainer><EventList eventGroup={'public'} /></AppContainer>, elm)
   }
 })
