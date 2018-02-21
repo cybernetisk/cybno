@@ -50,7 +50,7 @@ module.exports = {
   },
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/),
-    new ExtractTextPlugin("[name].css"),
+    extractSass,
 
     // imports and exports loader
     //new webpack.ProvidePlugin({
