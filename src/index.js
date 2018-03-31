@@ -5,8 +5,6 @@ import React from 'react'
 import { AppContainer } from 'react-hot-loader'
 import ReactDOM from 'react-dom'
 
-import Carousel from './Carousel'
-
 const days = 'sø._ma._ti._on._to._fr._lø.'.split('_')
 const months = 'jan._feb._mars_april_mai_juni_juli_aug._sep._okt._nov._des.'.split('_')
 
