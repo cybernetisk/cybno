@@ -141,7 +141,7 @@ class EventList extends React.Component {
         })}
 
         {this.state.number === 4 &&
-        <p className="more-entries"><a onClick={this.showMore} href="#">Se flere arrangement</a></p>
+          <p className="more-entries"><a onClick={this.showMore} href="#">Se flere arrangement</a></p>
         }
       </div>
     )
