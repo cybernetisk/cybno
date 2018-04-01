@@ -218,7 +218,7 @@ h3 {
 
 }
 
-.board-name-and-mobile div {
+.board-name-and-mobile div div {
   display: none;
 }
 
@@ -251,11 +251,11 @@ h3 {
     width: 100%;
   }
 
-  .board-name-and-mobile a, .board-name-and-mobile p {
+  .board-name-and-mobile a, .board-name-and-mobile > div > div {
     margin-bottom: 0;
   }
 
-  .board-name-and-mobile p {
+  .board-name-and-mobile > div > div {
     color: #9a9a9a;
   }
 
