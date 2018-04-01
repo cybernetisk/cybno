@@ -121,9 +121,9 @@ class EventList extends React.Component {
     let eventsToShow = this.state.eventsToShow
     const events = this.state.events.filter((event) => {
       if (this.props.eventGroup === 'intern') {
-        return this.renderWhat(event) !== "Kosetirsdag" && count-- > 0;
+        return this.renderWhat(event) !== "Kosetirsdag" && eventsToShow-- > 0;
       } else {
-        return count-- > 0;
+        return eventsToShow-- > 0;
       }
     })
 
