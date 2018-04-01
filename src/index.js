@@ -2,13 +2,14 @@ import './app.scss'
 
 import domready from 'domready'
 import React from 'react'
-import { AppContainer } from 'react-hot-loader'
+import {AppContainer} from 'react-hot-loader'
 import ReactDOM from 'react-dom'
 
 const days = 'Søndag_Mandag_Tirsdag_Onsdag_Torsdag_Fredag_Lørdag'.split('_')
 const months = 'januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember'.split('_')
 
 let upcomingEventsPromise
+
 function getUpcomingEvents() {
   if (!upcomingEventsPromise) {
     let headers = new Headers()
@@ -32,12 +33,14 @@ class EventList extends React.Component {
     this.state = {
       events: [],
       isLoading: true,
-      error: null
+      error: null,
+      number: 0
     }
     getUpcomingEvents().then(data => {
       this.setState({
         events: data[props.eventGroup].slice(0, 10),
-        isLoading: false
+        isLoading: false,
+        number: props.eventGroup === 'intern' ? 2 : 4
       })
     }, test => {
       this.setState({
@@ -45,10 +48,11 @@ class EventList extends React.Component {
         error: true
       })
     })
+    this.increaseNumber = this.increaseNumber.bind(this);
   }
 
   getDay(d) {
-    if(this.props.eventGroup === 'intern') {
+    if (this.props.eventGroup === 'intern') {
       return days[d.getDay()].toLowerCase()
     }
     return days[d.getDay()]
@@ -94,6 +98,13 @@ class EventList extends React.Component {
     return what
   }
 
+  increaseNumber(e) {
+    e.preventDefault();
+    this.setState(prevState => ({
+      number: prevState.number + 4
+    }));
+  }
+
   render() {
     if (this.state.isLoading) {
       return <p>Henter liste...</p>
@@ -107,9 +118,9 @@ class EventList extends React.Component {
       return <p>Ingen hendelser ble funnet.</p>
     }
 
-    let count = this.props.eventGroup === 'intern' ? 2 : 4;
+    let count = this.state.number
     const events = this.state.events.filter((event) => {
-      if(this.props.eventGroup === 'intern') {
+      if (this.props.eventGroup === 'intern') {
         return this.renderWhat(event) !== "Kosetirsdag" && count-- > 0;
       } else {
         return count-- > 0;
@@ -128,6 +139,10 @@ class EventList extends React.Component {
             </div>
           )
         })}
+
+        {this.state.number === 4 &&
+        <p className="more-entries"><a onClick={this.increaseNumber} href="#">Se flere arrangement</a></p>
+        }
       </div>
     )
   }
@@ -137,10 +152,10 @@ domready(() => {
   let elm;
 
   if (elm = document.getElementById("next-events-intern")) {
-    ReactDOM.render(<AppContainer><EventList eventGroup={'intern'} /></AppContainer>, elm)
+    ReactDOM.render(<AppContainer><EventList eventGroup={'intern'}/></AppContainer>, elm)
   }
 
   if (elm = document.getElementById("next-events-public")) {
-    ReactDOM.render(<AppContainer><EventList eventGroup={'public'} /></AppContainer>, elm)
+    ReactDOM.render(<AppContainer><EventList eventGroup={'public'}/></AppContainer>, elm)
   }
 })
