@@ -16,22 +16,22 @@ body {
   position: relative;
   top: 40px;
   left: 10px;
-	width: 28px;
-	height: 28px;
-	background: transparent;
-	border-top: 4px solid white;
-	border-right: 4px solid white;
-	box-shadow: 0 0 0 lightgray;
-	transition: all 200ms ease;
-	transform: translate3d(0,-50%,0) rotate(-135deg);
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border-top: 4px solid white;
+  border-right: 4px solid white;
+  box-shadow: 0 0 0 lightgray;
+  transition: all 200ms ease;
+  transform: translate3d(0,-50%,0) rotate(-135deg);
   display: block;
 }
 
 .arrow:before {
-	content: '';
-	transform: translate(-40%,-60%) rotate(45deg);
-	width: 200%;
-	height: 200%;
+  content: '';
+  transform: translate(-40%,-60%) rotate(45deg);
+  width: 200%;
+  height: 200%;
 }
 
 .logo-top {
