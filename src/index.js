@@ -34,13 +34,13 @@ class EventList extends React.Component {
       events: [],
       isLoading: true,
       error: null,
-      number: 0
+      eventsToShow: 0
     }
     getUpcomingEvents().then(data => {
       this.setState({
         events: data[props.eventGroup].slice(0, 10),
         isLoading: false,
-        number: props.eventGroup === 'intern' ? 2 : 4
+        eventsToShow: props.eventGroup === 'intern' ? 2 : 4
       })
     }, test => {
       this.setState({
@@ -48,7 +48,7 @@ class EventList extends React.Component {
         error: true
       })
     })
-    this.increaseNumber = this.increaseNumber.bind(this);
+    this.showMore = this.showMore.bind(this);
   }
 
   getDay(d) {
@@ -98,10 +98,10 @@ class EventList extends React.Component {
     return what
   }
 
-  increaseNumber(e) {
+  showMore(e) {
     e.preventDefault();
     this.setState(prevState => ({
-      number: prevState.number + 4
+      eventsToShow: prevState.eventsToShow + 4
     }));
   }
 
@@ -118,7 +118,7 @@ class EventList extends React.Component {
       return <p>Ingen hendelser ble funnet.</p>
     }
 
-    let count = this.state.number
+    let eventsToShow = this.state.eventsToShow
     const events = this.state.events.filter((event) => {
       if (this.props.eventGroup === 'intern') {
         return this.renderWhat(event) !== "Kosetirsdag" && count-- > 0;
@@ -141,7 +141,7 @@ class EventList extends React.Component {
         })}
 
         {this.state.number === 4 &&
-        <p className="more-entries"><a onClick={this.increaseNumber} href="#">Se flere arrangement</a></p>
+        <p className="more-entries"><a onClick={this.showMore} href="#">Se flere arrangement</a></p>
         }
       </div>
     )
