@@ -12,14 +12,34 @@ body {
 
 }
 
+.arrow {
+  position: relative;
+  top: 40px;
+  left: 10px;
+	width: 28px;
+	height: 28px;
+	background: transparent;
+	border-top: 4px solid white;
+	border-right: 4px solid white;
+	box-shadow: 0 0 0 lightgray;
+	transition: all 200ms ease;
+	transform: translate3d(0,-50%,0) rotate(-135deg);
+  display: block;
+}
+
+.arrow:before {
+	content: '';
+	transform: translate(-40%,-60%) rotate(45deg);
+	width: 200%;
+	height: 200%;
+}
+
 .logo-top {
   display: flex;
-  width: calc(100% - 250px);
-  justify-content: flex-end;
-  margin-top: 80px;
-  margin-bottom: 40px;
-  padding-right: 125px;
-  padding-left: 125px;
+  width: 90vw;
+  justify-content: space-between;
+  margin: 80px auto 40px;
+  flex-direction: row-reverse;
 }
 
 .main {
@@ -271,11 +291,9 @@ h3 {
 
   .logo-top {
     display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-top: 60px;
+    width: 90vw;
+    margin-top: 50px;
     margin-bottom: 20px;
-    margin-right: 0;
   }
 
   .flex-two > *:last-child {
