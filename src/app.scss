@@ -1,52 +1,270 @@
-@import 'vars';
+body {
+  margin: 0;
+  background-color: #212020;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  overflow-x: hidden;
 
-@include foundation-global-styles;
-@include foundation-xy-grid-classes;
-@include foundation-typography;
-@include foundation-menu;
-@include foundation-top-bar;
-@include foundation-button;
-@include foundation-visibility-classes;
-@include foundation-float-classes;
-
-body > header.top-bar {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-
-  .menu-text {
-    line-height: 2rem;
-  }
 }
 
-.page-logo {
+.logo-top {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  margin-right: 250px;
+}
+
+.main {
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main > * {
+  margin-bottom: 100px;
+  margin-top: 0;
+}
+
+.main > h1 {
   display: inline-block;
-  padding: 0 0 0 1rem;
+  font-family: 'Roboto Slab', serif;
+  letter-spacing: 3px;
+  font-weight: 400;
+  font-size: 60px;
+  margin-top: 30px;
+}
 
-  img {
-    height: 3rem;
+h2 {
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.flex-two {
+  display: flex;
+  width: 100%;
+}
+
+.flex-two > div {
+  width: 50%;
+}
+
+.white-bg {
+  background-color: white;
+  color: black;
+}
+
+.foredrag {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer-wrapper {
+  background-color: #1A1A1A;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  margin-bottom: 60px;
+}
+
+.footer > div {
+  width: 33%;
+}
+
+a {
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}
+
+.white-bg a {
+  color: black;
+}
+
+h3 {
+  font-weight: 400;
+  color: #b2b2b2;
+}
+
+.footer a {
+  text-transform: none;
+  font-weight: 300;
+}
+
+.desc {
+  margin-top: 0;
+}
+
+.name {
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+
+.rent {
+  width: calc(100% + 200px);
+  margin-left: -100px;
+  margin-right: -100px;
+}
+
+.rent-text {
+  padding: 100px;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  line-height: 30px;
+  justify-content: space-between;
+}
+
+.footer {
+  color: #9a9a9a;
+}
+
+.footer ul a {
+  color: #9a9a9a;
+}
+
+.main > .teaser {
+  font-size: 26px;
+  margin-top: -50px;
+  margin-bottom: 70px;
+}
+
+.footer > .seksseks {
+  width: 66%;
+}
+
+.int-event-title {
+  margin-bottom: 10px;
+}
+
+.int-event {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.board-name-and-mobile div {
+  display: none;
+}
+
+@media only screen and (max-width: 1150px) {
+  .rent {
+    width: calc(100% + 250px);
+    margin-left: -125px;
+    margin-right: -125px;
+  }
+  .rent-text {
+    padding: 125px;
+  }
+
+  .rent > div {
+    width: 100%;
+  }
+
+  .foredrag-par {
+    display: none;
+  }
+  .main, .footer {
+    margin-left: 125px;
+    margin-right: 125px;
+  }
+  .board-desktop {
+    display: none;
+  }
+
+  .flex-two > .board-name-and-mobile {
+    width: 100%;
+  }
+
+  .board-name-and-mobile a, .board-name-and-mobile p {
+    margin-bottom: 0;
+  }
+
+  .board-name-and-mobile p {
+    color: #9a9a9a;
+  }
+
+  .board-name-and-mobile div {
+    display: block;
+    margin-top: 0;
   }
 }
 
-.page-dl {
-  dt {
-    @include breakpoint(large) {
-      clear: left;
-      float: left;
-      min-width: 14rem;
-    }
-    margin: 0;
-    padding-right: 1rem;
+@media only screen and (max-width: 750px) {
+  .flex-two {
+    flex-direction: column;
   }
-}
+  .flex-two > div {
+    width: 100%;
+  }
 
-.page-bottom {
-  margin-bottom: 1rem;
-}
+  .main > * {
+    margin-bottom: 50px;
+  }
 
-.event-when {
-  color: #666;
-}
+  .main, .footer {
+    margin-left: 0;
+    margin-right: 0;
+    width: 90vw;
+  }
 
-.utlan-vilkar {
-  font-size: 0.8em;
+  .main > h1 {
+    width: 100%;
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+
+  .main > .teaser {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .logo-top {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .flex-two > *:last-child {
+    margin-top: 30px;
+  }
+
+  .flex-two > .board-name-and-mobile {
+    margin-top: 0;
+  }
+
+  .rent {
+    width: calc(100% + 10vw);
+  }
+
+  .rent-text {
+    padding: 15vw 5vw;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+    margin: 10px auto;
+  }
+  .footer > div, .footer .seksseks {
+    width: 100%;
+  }
 }
