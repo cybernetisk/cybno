@@ -159,6 +159,23 @@ h3 {
   margin-bottom: 0;
 }
 
+#next-events-intern > div > div > p {
+  display: inline-block;
+  margin: 0;
+}
+
+#next-events-intern > div > div {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+#next-events-intern > div > div > .desc::after {
+  content: ' ';
+  white-space: pre;
+
+}
+
 .board-name-and-mobile div {
   display: none;
 }

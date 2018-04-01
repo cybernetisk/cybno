@@ -5,8 +5,8 @@ import React from 'react'
 import { AppContainer } from 'react-hot-loader'
 import ReactDOM from 'react-dom'
 
-const days = 'sø._ma._ti._on._to._fr._lø.'.split('_')
-const months = 'jan._feb._mars_april_mai_juni_juli_aug._sep._okt._nov._des.'.split('_')
+const days = 'Søndag_Mandag_Tirsdag_Onsdag_Torsdag_Fredag_Lørdag'.split('_')
+const months = 'januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember'.split('_')
 
 let upcomingEventsPromise
 function getUpcomingEvents() {
@@ -48,6 +48,9 @@ class EventList extends React.Component {
   }
 
   getDay(d) {
+    if(this.props.eventGroup === 'intern') {
+      return days[d.getDay()].toLowerCase()
+    }
     return days[d.getDay()]
   }
 
@@ -104,36 +107,34 @@ class EventList extends React.Component {
       return <p>Ingen hendelser ble funnet.</p>
     }
 
-    let kafe = null
-    if (this.props.eventGroup === 'public') {
-      //kafe = <li>Kaféen holder stengt fra 15. Mai grunnet eksamensperiode og sommerperiode. Velkommen tilbake til kaféen under fadderukene til høsten!</li>
-      //kafe = <li>Kaféen holder stengt grunnet eksamensperiode og jul. Velkommen tilbake til kaféen når den åpner 16. januar!</li>
-      kafe = <p>Kaféen er åpen hver ukedag kl 10-15.15. Hos oss får du en kopp kaffe for kun kr 5!</p>
-    }
+    let count = this.props.eventGroup === 'intern' ? 2 : 4;
+    const events = this.state.events.filter((event) => {
+      if(this.props.eventGroup === 'intern') {
+        return this.renderWhat(event) !== "Kosetirsdag" && count-- > 0;
+      } else {
+        return count-- > 0;
+      }
+    })
 
     return (
-        {kafe},
-        <ul>
-          {this.state.events.map((event, i) => {
-            const when = this.renderWhen(event)
-            const what = this.renderWhat(event)
-            return (
-              <li key={i}>
-                <span className="event-when">{when}:</span> {what}
-              </li>
-            )
-          })}
-        </ul>
+      <div>
+        {events.map((event, i) => {
+          const when = this.renderWhen(event)
+          const what = this.renderWhat(event)
+          return (
+            <div key={i}>
+              <p className="name">{when}</p>
+              <p className="desc">{what}</p>
+            </div>
+          )
+        })}
+      </div>
     )
   }
 }
 
 domready(() => {
   let elm;
-
-  if (elm = document.getElementById("page-carousel")) {
-    ReactDOM.render(<AppContainer><Carousel /></AppContainer>, elm)
-  }
 
   if (elm = document.getElementById("next-events-intern")) {
     ReactDOM.render(<AppContainer><EventList eventGroup={'intern'} /></AppContainer>, elm)
