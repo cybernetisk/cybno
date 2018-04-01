@@ -14,11 +14,12 @@ body {
 
 .logo-top {
   display: flex;
-  width: 100%;
+  width: calc(100% - 250px);
   justify-content: flex-end;
   margin-top: 80px;
   margin-bottom: 40px;
-  margin-right: 250px;
+  padding-right: 125px;
+  padding-left: 125px;
 }
 
 .main {
