@@ -95,9 +95,25 @@ a {
   color: black;
 }
 
-h3 {
+footer > h3 {
   font-weight: 400;
   color: #b2b2b2;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.utlan-vilkar {
+  line-height: 30px;
+}
+
+.faq p {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .footer a {
