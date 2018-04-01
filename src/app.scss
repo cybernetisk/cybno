@@ -151,6 +151,10 @@ h3 {
   margin-bottom: 0;
 }
 
+#next-events-public > div > div:first-child > .name {
+  margin-top: inherit;
+}
+
 .rent {
   width: calc(100% + 200px);
   margin-left: -100px;
