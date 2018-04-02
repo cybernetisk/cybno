@@ -152,7 +152,7 @@ h3 {
   margin-bottom: 0;
 }
 
-#next-events-public > div > div:first-child > .name {
+#next-events-public > div >  ul:first-child > .name {
   margin-top: inherit;
 }
 
@@ -166,10 +166,13 @@ h3 {
   padding: 100px;
 }
 
-.footer ul {
+ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.footer ul {
   line-height: 30px;
   justify-content: space-between;
 }
@@ -201,22 +204,24 @@ h3 {
   margin-bottom: 0;
 }
 
-#next-events-intern > div > div > p {
+#next-events-intern > div > ul > li {
   display: inline-block;
   margin: 0;
 }
 
-#next-events-intern > div > div {
+#next-events-intern > div > ul {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
 
-#next-events-intern > div > div > .desc::after {
+#next-events-intern > div > ul > .desc::after {
   content: ' ';
   white-space: pre;
 
 }
+
+
 
 .board-name-and-mobile div div {
   display: none;

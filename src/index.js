@@ -133,10 +133,10 @@ class EventList extends React.Component {
           const when = this.renderWhen(event)
           const what = this.renderWhat(event)
           return (
-            <div key={i}>
-              <p className="name">{when}</p>
-              <p className="desc">{what}</p>
-            </div>
+            <ul key={i}>
+              <li className="name">{when}</li>
+              <li className="desc">{what}</li>
+            </ul>
           )
         })}
 
