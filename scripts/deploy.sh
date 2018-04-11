@@ -29,7 +29,7 @@ rsync -arv --delete -e "ssh -o StrictHostKeyChecking=no" public/ cyb@login.ifi.u
 
 ssh -o StrictHostKeyChecking=no cyb@login.ifi.uio.no /bin/bash <<EOF
   set -e
-  cd www_docs/2016/
+  cd www_docs/2018/
   chmod a+r . -R
 EOF
 
