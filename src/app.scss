@@ -9,7 +9,9 @@ body {
   font-size: 18px;
   font-weight: 300;
   overflow-x: hidden;
-
+  background-image: url('/img/olejohan.svg');
+  background-repeat: no-repeat;
+  background-position: 90% 2%;
 }
 
 .arrow {
@@ -145,6 +147,7 @@ h3 {
 
 .desc {
   margin-top: 0;
+  color: #E4E4E4;
 }
 
 .name {
@@ -271,6 +274,9 @@ ul {
 }
 
 @media only screen and (max-width: 750px) {
+  body{
+      background-image: none;
+  }
   .flex-two {
     flex-direction: column;
   }
