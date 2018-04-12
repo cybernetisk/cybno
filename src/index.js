@@ -2,15 +2,14 @@ import './app.scss'
 
 import domready from 'domready'
 import React from 'react'
-import { AppContainer } from 'react-hot-loader'
+import {AppContainer} from 'react-hot-loader'
 import ReactDOM from 'react-dom'
 
-import Carousel from './Carousel'
-
-const days = 'sø._ma._ti._on._to._fr._lø.'.split('_')
-const months = 'jan._feb._mars_april_mai_juni_juli_aug._sep._okt._nov._des.'.split('_')
+const days = 'Søndag_Mandag_Tirsdag_Onsdag_Torsdag_Fredag_Lørdag'.split('_')
+const months = 'januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember'.split('_')
 
 let upcomingEventsPromise
+
 function getUpcomingEvents() {
   if (!upcomingEventsPromise) {
     let headers = new Headers()
@@ -34,12 +33,14 @@ class EventList extends React.Component {
     this.state = {
       events: [],
       isLoading: true,
-      error: null
+      error: null,
+      eventsToShow: 0
     }
     getUpcomingEvents().then(data => {
       this.setState({
         events: data[props.eventGroup].slice(0, 10),
-        isLoading: false
+        isLoading: false,
+        eventsToShow: props.eventGroup === 'intern' ? 2 : 4
       })
     }, test => {
       this.setState({
@@ -47,9 +48,13 @@ class EventList extends React.Component {
         error: true
       })
     })
+    this.showMore = this.showMore.bind(this);
   }
 
   getDay(d) {
+    if (this.props.eventGroup === 'intern') {
+      return days[d.getDay()].toLowerCase()
+    }
     return days[d.getDay()]
   }
 
@@ -93,6 +98,13 @@ class EventList extends React.Component {
     return what
   }
 
+  showMore(e) {
+    e.preventDefault();
+    this.setState(prevState => ({
+      eventsToShow: prevState.eventsToShow + 4
+    }));
+  }
+
   render() {
     if (this.state.isLoading) {
       return <p>Henter liste...</p>
@@ -106,26 +118,32 @@ class EventList extends React.Component {
       return <p>Ingen hendelser ble funnet.</p>
     }
 
-    let kafe = null
-    if (this.props.eventGroup === 'public') {
-      //kafe = <li>Kaféen holder stengt fra 15. Mai grunnet eksamensperiode og sommerperiode. Velkommen tilbake til kaféen under fadderukene til høsten!</li>
-      //kafe = <li>Kaféen holder stengt grunnet eksamensperiode og jul. Velkommen tilbake til kaféen når den åpner 16. januar!</li>
-      kafe = <p>Kaféen er åpen hver ukedag kl 10-15.15. Hos oss får du en kopp kaffe for kun kr 5!</p>
-    }
+    let eventsToShow = this.state.eventsToShow
+    const events = this.state.events.filter((event) => {
+      if (this.props.eventGroup === 'intern') {
+        return this.renderWhat(event) !== "Kosetirsdag" && eventsToShow-- > 0;
+      } else {
+        return eventsToShow-- > 0;
+      }
+    })
 
     return (
-        {kafe},
-        <ul>
-          {this.state.events.map((event, i) => {
-            const when = this.renderWhen(event)
-            const what = this.renderWhat(event)
-            return (
-              <li key={i}>
-                <span className="event-when">{when}:</span> {what}
-              </li>
-            )
-          })}
-        </ul>
+      <div>
+        {events.map((event, i) => {
+          const when = this.renderWhen(event)
+          const what = this.renderWhat(event)
+          return (
+            <ul key={i}>
+              <li className="name">{when}</li>
+              <li className="desc">{what}</li>
+            </ul>
+          )
+        })}
+
+        {this.state.eventsToShow === 4 &&
+          <p className="more-entries"><a onClick={this.showMore} href="#">Se flere arrangement</a></p>
+        }
+      </div>
     )
   }
 }
@@ -133,15 +151,11 @@ class EventList extends React.Component {
 domready(() => {
   let elm;
 
-  if (elm = document.getElementById("page-carousel")) {
-    ReactDOM.render(<AppContainer><Carousel /></AppContainer>, elm)
-  }
-
   if (elm = document.getElementById("next-events-intern")) {
-    ReactDOM.render(<AppContainer><EventList eventGroup={'intern'} /></AppContainer>, elm)
+    ReactDOM.render(<AppContainer><EventList eventGroup={'intern'}/></AppContainer>, elm)
   }
 
   if (elm = document.getElementById("next-events-public")) {
-    ReactDOM.render(<AppContainer><EventList eventGroup={'public'} /></AppContainer>, elm)
+    ReactDOM.render(<AppContainer><EventList eventGroup={'public'}/></AppContainer>, elm)
   }
 })
