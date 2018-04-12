@@ -25,7 +25,7 @@ npm run build
 
 echo "Deploying new files"
 
-rsync -arv --delete -e "ssh -o StrictHostKeyChecking=no" public/ cyb@login.ifi.uio.no:www_docs/2016/
+rsync -arv --delete -e "ssh -o StrictHostKeyChecking=no" public/ cyb@login.ifi.uio.no:www_docs/2018/
 
 ssh -o StrictHostKeyChecking=no cyb@login.ifi.uio.no /bin/bash <<EOF
   set -e
