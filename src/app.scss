@@ -230,6 +230,10 @@ ul {
   display: none;
 }
 
+.board-name-and-mobile {
+  line-height: 21px;
+}
+
 @media only screen and (max-width: 1150px) {
   .rent {
     width: calc(100% + 250px);
@@ -267,7 +271,7 @@ ul {
     color: #9a9a9a;
   }
 
-  .board-name-and-mobile div {
+  .board-name-and-mobile div div {
     display: block;
     margin-top: 0;
   }
