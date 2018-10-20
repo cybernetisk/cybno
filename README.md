@@ -1,15 +1,31 @@
 # cyb.no
 
-## Bygge siden
+## Quick start
+
 ```bash
+# install dependencies
+yarn
+
+# build
 yarn run build
+
+# serve static files
+(cd public && python3 -m http.server 3000)
 ```
 
-Eksponer mappen `public` mot nett og siden vil være live.
+## Development
 
-## Utvikling
 ```bash
+# install dependencies
+yarn
+
+# run development server
 yarn run dev
 ```
 
-Åpne http://localhost:3000/ for å se siden. JavaScript og CSS kompileres og oppdaters automatisk i bakgrunnen.
+Access http://localhost:3000/ for the development version. Changes to
+JavaScript and CSS-files should be updated live.
+
+## Deployment
+
+The site is deployed automatically by Travis CI on pushes to master.
