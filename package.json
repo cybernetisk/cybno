@@ -10,13 +10,13 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
+    "@babel/core": "7.1.2",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.4",
     "css-loader": "1.0.0",
     "domready": "1.0.8",
-    "mini-css-extract-plugin": "^0.4.4",
+    "mini-css-extract-plugin": "0.4.4",
     "node-sass": "4.9.4",
     "react": "16.5.2",
     "react-dom": "16.5.2",
@@ -24,7 +24,7 @@
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
     "webpack": "4.21.0",
-    "webpack-cli": "^3.1.2",
+    "webpack-cli": "3.1.2",
     "webpack-dev-server": "3.1.9",
     "whatwg-fetch": "3.0.0"
   }
