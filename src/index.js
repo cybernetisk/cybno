@@ -2,7 +2,7 @@ import './app.scss'
 
 import domready from 'domready'
 import React from 'react'
-import {AppContainer} from 'react-hot-loader'
+import { hot } from 'react-hot-loader'
 import ReactDOM from 'react-dom'
 
 const days = 'Søndag_Mandag_Tirsdag_Onsdag_Torsdag_Fredag_Lørdag'.split('_')
@@ -152,10 +152,12 @@ domready(() => {
   let elm;
 
   if (elm = document.getElementById("next-events-intern")) {
-    ReactDOM.render(<AppContainer><EventList eventGroup={'intern'}/></AppContainer>, elm)
+    const Events = hot(module)(() => <EventList eventGroup='intern' />)
+    ReactDOM.render(<Events />, elm)
   }
 
   if (elm = document.getElementById("next-events-public")) {
-    ReactDOM.render(<AppContainer><EventList eventGroup={'public'}/></AppContainer>, elm)
+    const Events = hot(module)(() => <EventList eventGroup='public' />)
+    ReactDOM.render(<Events />, elm)
   }
 })
