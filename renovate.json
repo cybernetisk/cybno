@@ -1,5 +1,43 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "packageRules": [
+    {
+      "groupName": "node-sass",
+      "packagePatterns": [
+        "^node-sass$"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "groupName": "webpack-loaders",
+      "packagePatterns": [
+        "-loader$"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "groupName": "webpack",
+      "packagePatterns": [
+        "^webpack",
+        "^mini-css-extract-plugin$"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "groupName": "babel",
+      "packagePatterns": [
+        "^@babel/"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ],
+  "pin": {
+    "automerge": true
+  }
 }
