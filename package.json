@@ -18,14 +18,14 @@
     "domready": "1.0.8",
     "mini-css-extract-plugin": "0.4.4",
     "node-sass": "4.9.4",
-    "react": "16.5.2",
-    "react-dom": "16.5.2",
+    "react": "16.6.0",
+    "react-dom": "16.6.0",
     "react-hot-loader": "4.3.11",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
-    "webpack": "4.22.0",
+    "webpack": "4.23.1",
     "webpack-cli": "3.1.2",
-    "webpack-dev-server": "3.1.9",
+    "webpack-dev-server": "3.1.10",
     "whatwg-fetch": "3.0.0"
   }
 }
