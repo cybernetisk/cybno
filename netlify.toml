@@ -5,7 +5,7 @@ ID = "cybno"
 # webserver maintained by the Department of Informatics
 [[redirects]]
   from = "/*"
-  to = "http://cyb.at.ifi.uio.no/:splat"
+  to = "https://heim.ifi.uio.no/~cyb/:splat"
 
   status = 200
 
