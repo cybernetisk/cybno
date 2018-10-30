@@ -1,0 +1,11 @@
+[Settings]
+ID = "cybno"
+
+# Redirect all paths that don't match to our storage at the
+# webserver maintained by the Department of Informatics
+[[redirects]]
+  from = "/*"
+  to = "http://cyb.at.ifi.uio.no/:splat"
+
+  status = 200
+
