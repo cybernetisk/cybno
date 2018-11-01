@@ -6,6 +6,16 @@ ID = "cybno"
 [[redirects]]
   from = "/*"
   to = "https://heim.ifi.uio.no/~cyb/:splat"
-
   status = 200
+
+# Redirect for our bylaws
+[[redirects]]
+  from = "https://vedtekter.cyb.no"
+  to  = "https://cybernetisk.github.io/docs/vedtekter/vedtekter.pdf"
+	status = 200
+
+[[redirects]]
+  from = "http://vedtekter.cyb.no"
+  to  = "https://cybernetisk.github.io/docs/vedtekter/vedtekter.pdf"
+	status = 200
 
