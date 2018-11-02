@@ -13,9 +13,6 @@ ID = "cybno"
   from = "https://vedtekter.cyb.no"
   to  = "https://cybernetisk.github.io/docs/vedtekter/vedtekter.pdf"
 	status = 200
+  force = true
 
-[[redirects]]
-  from = "http://vedtekter.cyb.no"
-  to  = "https://cybernetisk.github.io/docs/vedtekter/vedtekter.pdf"
-	status = 200
 
