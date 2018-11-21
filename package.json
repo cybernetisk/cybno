@@ -16,7 +16,7 @@
     "babel-loader": "8.0.4",
     "css-loader": "1.0.1",
     "domready": "1.0.8",
-    "mini-css-extract-plugin": "0.4.4",
+    "mini-css-extract-plugin": "0.4.5",
     "node-sass": "4.10.0",
     "react": "16.6.0",
     "react-dom": "16.6.0",
