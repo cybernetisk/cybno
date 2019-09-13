@@ -23,7 +23,7 @@
     "react-hot-loader": "4.12.13",
     "sass-loader": "8.0.0",
     "style-loader": "1.0.0",
-    "webpack": "4.40.1",
+    "webpack": "4.40.2",
     "webpack-cli": "3.3.8",
     "webpack-dev-server": "3.8.0",
     "whatwg-fetch": "3.0.0"
