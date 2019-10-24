@@ -17,7 +17,7 @@
     "css-loader": "3.2.0",
     "domready": "1.0.8",
     "mini-css-extract-plugin": "0.8.0",
-    "node-sass": "4.12.0",
+    "node-sass": "4.13.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-hot-loader": "4.12.15",
