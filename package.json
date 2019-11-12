@@ -20,7 +20,7 @@
     "node-sass": "4.13.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
-    "react-hot-loader": "4.12.16",
+    "react-hot-loader": "4.12.17",
     "sass-loader": "8.0.0",
     "style-loader": "1.0.0",
     "webpack": "4.41.2",
