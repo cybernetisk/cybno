@@ -10,9 +10,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "7.7.7",
-    "@babel/preset-env": "7.7.7",
-    "@babel/preset-react": "7.7.4",
+    "@babel/core": "7.8.0",
+    "@babel/preset-env": "7.8.0",
+    "@babel/preset-react": "7.8.0",
     "babel-loader": "8.0.6",
     "css-loader": "3.4.2",
     "domready": "1.0.8",
