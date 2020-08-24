@@ -14,7 +14,7 @@
     "@babel/preset-env": "7.11.0",
     "@babel/preset-react": "7.10.4",
     "babel-loader": "8.1.0",
-    "css-loader": "4.2.1",
+    "css-loader": "4.2.2",
     "domready": "1.0.8",
     "mini-css-extract-plugin": "0.10.0",
     "node-sass": "4.14.1",
