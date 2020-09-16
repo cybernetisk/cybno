@@ -36,7 +36,12 @@ const config = {
         test: /\.scss$/,
         use: [
           STYLE_LOADER,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+            },
+          },
           'sass-loader',
         ],
       },
