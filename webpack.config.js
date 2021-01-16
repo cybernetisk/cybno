@@ -52,8 +52,6 @@ const config = {
 };
 
 if (production) {
-  config.optimization.noEmitOnErrors = true
-
   // Split CSS to separate files
   config.plugins.push((
     new MiniCssExtractPlugin({
