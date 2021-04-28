@@ -17,7 +17,7 @@
     "@types/webpack-dev-server": "3.11.1",
     "css-loader": "5.2.4",
     "domready": "1.0.8",
-    "mini-css-extract-plugin": "1.5.0",
+    "mini-css-extract-plugin": "1.5.1",
     "node-sass": "5.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
