@@ -17,7 +17,7 @@
     "@types/webpack-dev-server": "3.11.1",
     "css-loader": "5.2.4",
     "domready": "1.0.8",
-    "mini-css-extract-plugin": "1.5.1",
+    "mini-css-extract-plugin": "1.6.0",
     "node-sass": "5.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -27,7 +27,7 @@
     "ts-loader": "9.1.1",
     "ts-node": "9.1.1",
     "typescript": "4.1.5",
-    "webpack": "5.36.1",
+    "webpack": "5.36.2",
     "webpack-cli": "4.6.0",
     "webpack-dev-server": "3.11.2",
     "whatwg-fetch": "3.6.1"
