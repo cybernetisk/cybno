@@ -1,6 +1,9 @@
 [Settings]
 ID = "cybno"
 
+[build]
+  environment = { NODE_VERSION = "14" }
+
 # REDIRECTS
 # - Note that all redirects will match on first hit, so be very careful
 
