@@ -15,7 +15,7 @@ const config: webpack.Configuration = {
     filename: "bundle.js",
   },
   devServer: {
-    contentBase: "./public",
+    static: "./public",
     hot: true,
     port: 3000,
   },
