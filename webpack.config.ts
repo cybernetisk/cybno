@@ -1,7 +1,7 @@
-import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import * as path from "path"
 import * as webpack from "webpack"
 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const production = process.env.NODE_ENV === "production"
 
 const STYLE_LOADER = production ? MiniCssExtractPlugin.loader : "style-loader"
@@ -45,20 +45,12 @@ const config: webpack.Configuration = {
       },
     ],
   },
-  plugins: [],
+  plugins: [new MiniCssExtractPlugin()],
   optimization: {},
 }
 
 if (production) {
-  // Split CSS to separate files
-  ;(config.plugins as webpack.WebpackPluginInstance[]).push(
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "main.css",
-      chunkFilename: "main.css",
-    }),
-  )
+
 }
 
 export default config
