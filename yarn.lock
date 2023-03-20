@@ -170,7 +170,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/connect-history-api-fallback@*", "@types/connect-history-api-fallback@^1.3.5":
+"@types/connect-history-api-fallback@^1.3.5":
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/@types/connect-history-api-fallback/-/connect-history-api-fallback-1.3.5.tgz#d1f7a8a09d0ed5a57aee5ae9c18ab9b803205dae"
   integrity sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw==
@@ -235,7 +235,7 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
-"@types/http-proxy@^1.17.5", "@types/http-proxy@^1.17.8":
+"@types/http-proxy@^1.17.8":
   version "1.17.10"
   resolved "https://registry.yarnpkg.com/@types/http-proxy/-/http-proxy-1.17.10.tgz#e576c8e4a0cc5c6a138819025a88e167ebb38d6c"
   integrity sha512-Qs5aULi+zV1bwKAg5z1PWnDXWmsn+LxIvUGv6E2+OOMYhclZMO+OXd9pYVf2gLykf2I7IV2u7oTHwChPNsvJ7g==
@@ -346,54 +346,12 @@
   dependencies:
     "@types/node" "*"
 
-"@types/source-list-map@*":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@types/source-list-map/-/source-list-map-0.1.2.tgz#0078836063ffaf17412349bba364087e0ac02ec9"
-  integrity sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==
-
-"@types/tapable@^1":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.8.tgz#b94a4391c85666c7b73299fd3ad79d4faa435310"
-  integrity sha512-ipixuVrh2OdNmauvtT51o3d8z12p6LtFW9in7U79der/kwejjdNchQC5UMn5u/KxNoM7VHHOs/l8KS8uHxhODQ==
-
-"@types/uglify-js@*":
-  version "3.17.1"
-  resolved "https://registry.yarnpkg.com/@types/uglify-js/-/uglify-js-3.17.1.tgz#e0ffcef756476410e5bce2cb01384ed878a195b5"
-  integrity sha512-GkewRA4i5oXacU/n4MA9+bLgt5/L3F1mKrYvFGm7r2ouLXhRKjuWwo9XHNnbx6WF3vlGW21S3fCvgqxvxXXc5g==
+"@types/webpack-dev-server@4.7.1":
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-4.7.1.tgz#fd6766d85fd91de7d2242a0131075b4c247414df"
+  integrity sha512-T6UeAUQWojf1toimSIf6sBwaO4HQ4iHdF4BL2RbPbzKTqe5blB7Iih7i7h69NSg/fOjWlkdszNPlaWD1/aX5LQ==
   dependencies:
-    source-map "^0.6.1"
-
-"@types/webpack-dev-server@3.11.6":
-  version "3.11.6"
-  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-3.11.6.tgz#d8888cfd2f0630203e13d3ed7833a4d11b8a34dc"
-  integrity sha512-XCph0RiiqFGetukCTC3KVnY1jwLcZ84illFRMbyFzCcWl90B/76ew0tSqF46oBhnLC4obNDG7dMO0JfTN0MgMQ==
-  dependencies:
-    "@types/connect-history-api-fallback" "*"
-    "@types/express" "*"
-    "@types/serve-static" "*"
-    "@types/webpack" "^4"
-    http-proxy-middleware "^1.0.0"
-
-"@types/webpack-sources@*":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@types/webpack-sources/-/webpack-sources-3.2.0.tgz#16d759ba096c289034b26553d2df1bf45248d38b"
-  integrity sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==
-  dependencies:
-    "@types/node" "*"
-    "@types/source-list-map" "*"
-    source-map "^0.7.3"
-
-"@types/webpack@^4":
-  version "4.41.33"
-  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.41.33.tgz#16164845a5be6a306bcbe554a8e67f9cac215ffc"
-  integrity sha512-PPajH64Ft2vWevkerISMtnZ8rTs4YmRbs+23c402J0INmxDKCrhZNvwZYtzx96gY2wAtXdrK1BS2fiC8MlLr3g==
-  dependencies:
-    "@types/node" "*"
-    "@types/tapable" "^1"
-    "@types/uglify-js" "*"
-    "@types/webpack-sources" "*"
-    anymatch "^3.0.0"
-    source-map "^0.6.0"
+    webpack-dev-server "*"
 
 "@types/ws@^8.5.1":
   version "8.5.4"
@@ -663,7 +621,7 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-anymatch@^3.0.0, anymatch@~3.1.2:
+anymatch@~3.1.2:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-3.1.3.tgz#790c58b19ba1720a84205b57c618d5ad8524973e"
   integrity sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==
@@ -1688,17 +1646,6 @@ http-proxy-agent@^5.0.0:
     "@tootallnate/once" "2"
     agent-base "6"
     debug "4"
-
-http-proxy-middleware@^1.0.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/http-proxy-middleware/-/http-proxy-middleware-1.3.1.tgz#43700d6d9eecb7419bf086a128d0f7205d9eb665"
-  integrity sha512-13eVVDYS4z79w7f1+NPllJtOQFx/FdUW4btIvVRMaRlUY9VGstAbo5MOhLEuUgZFRHn3x50ufn25zkj/boZnEg==
-  dependencies:
-    "@types/http-proxy" "^1.17.5"
-    http-proxy "^1.18.1"
-    is-glob "^4.0.1"
-    is-plain-obj "^3.0.0"
-    micromatch "^4.0.2"
 
 http-proxy-middleware@^2.0.3:
   version "2.0.6"
@@ -3106,7 +3053,7 @@ source-map-support@~0.5.20:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
 
-source-map@^0.6.0, source-map@^0.6.1:
+source-map@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
@@ -3517,7 +3464,7 @@ webpack-dev-middleware@^5.3.1:
     range-parser "^1.2.1"
     schema-utils "^4.0.0"
 
-webpack-dev-server@4.13.1:
+webpack-dev-server@*, webpack-dev-server@4.13.1:
   version "4.13.1"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-4.13.1.tgz#6417a9b5d2f528e7644b68d6ed335e392dccffe8"
   integrity sha512-5tWg00bnWbYgkN+pd5yISQKDejRBYGEw15RaEEslH+zdbNDxxaZvEAO2WulaSaFKb5n3YG8JXsGaDsut1D0xdA==
