@@ -28,4 +28,4 @@ JavaScript and CSS-files should be updated live.
 
 ## Deployment
 
-The site is deployed automatically by Travis CI on pushes to master.
+The site is hosted via Netlify and automatically built/released from master.
