@@ -1,7 +1,8 @@
+import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import * as path from "path"
 import * as webpack from "webpack"
+import "webpack-dev-server"
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const production = process.env.NODE_ENV === "production"
 
 const STYLE_LOADER = production ? MiniCssExtractPlugin.loader : "style-loader"
@@ -15,7 +16,9 @@ const config: webpack.Configuration = {
     filename: "bundle.js",
   },
   devServer: {
-    contentBase: "./public",
+    static: {
+      directory: "./public",
+    },
     hot: true,
     port: 3000,
   },
@@ -47,10 +50,6 @@ const config: webpack.Configuration = {
   },
   plugins: [new MiniCssExtractPlugin()],
   optimization: {},
-}
-
-if (production) {
-
 }
 
 export default config
