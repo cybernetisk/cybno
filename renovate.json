@@ -9,14 +9,6 @@
   },
   "packageRules": [
     {
-      "groupName": "node-sass",
-      "packagePatterns": [
-        "^node-sass$"
-      ],
-      "automerge": true,
-      "automergeType": "branch"
-    },
-    {
       "groupName": "webpack-loaders",
       "packagePatterns": [
         "-loader$"
@@ -37,6 +29,21 @@
       "groupName": "babel",
       "packagePatterns": [
         "^@babel/"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "packagePatterns": [
+        "^@types/"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "packageNames": [
+        "typescript",
+        "sass"
       ],
       "automerge": true,
       "automergeType": "branch"
