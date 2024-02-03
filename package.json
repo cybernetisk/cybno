@@ -11,7 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/domready": "1.0.2",
-    "@types/react": "18.2.51",
+    "@types/react": "18.2.52",
     "@types/react-dom": "18.2.18",
     "css-loader": "6.10.0",
     "domready": "1.0.8",
