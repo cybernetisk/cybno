@@ -1,55 +1,10 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
   "lockFileMaintenance": {
-    "automerge": true,
-    "automergeType": "branch",
     "enabled": true
   },
-  "packageRules": [
-    {
-      "groupName": "webpack-loaders",
-      "packagePatterns": [
-        "-loader$"
-      ],
-      "automerge": true,
-      "automergeType": "branch"
-    },
-    {
-      "groupName": "webpack",
-      "packagePatterns": [
-        "^webpack",
-        "^mini-css-extract-plugin$"
-      ],
-      "automerge": true,
-      "automergeType": "branch"
-    },
-    {
-      "groupName": "babel",
-      "packagePatterns": [
-        "^@babel/"
-      ],
-      "automerge": true,
-      "automergeType": "branch"
-    },
-    {
-      "packagePatterns": [
-        "^@types/"
-      ],
-      "automerge": true,
-      "automergeType": "branch"
-    },
-    {
-      "packageNames": [
-        "typescript",
-        "sass"
-      ],
-      "automerge": true,
-      "automergeType": "branch"
-    }
-  ],
-  "pin": {
-    "automerge": true
-  }
+  "automerge": true,
+  "automergeType": "branch",
+  "rangeStrategy": "pin"
 }
