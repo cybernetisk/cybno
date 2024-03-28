@@ -6,5 +6,8 @@
   },
   "automerge": true,
   "automergeType": "branch",
-  "rangeStrategy": "pin"
+  "rangeStrategy": "pin",
+  "major": {
+    "automerge": false
+  }
 }
