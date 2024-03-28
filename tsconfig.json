@@ -1,12 +1,7 @@
 {
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "esModuleInterop": true,
-    "jsx": "react",
-    "lib": ["dom", "es2017"],
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "strict": true,
-    "target": "ES6",
-  },
-  "include": ["./src"]
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
 }

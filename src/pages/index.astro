@@ -1,3 +1,7 @@
+---
+import { EventList } from "../index.jsx";
+import "../app.scss"
+---
 <!doctype html>
 <html class="no-js" lang="nb">
   <head>
@@ -8,8 +12,6 @@
           content="Cybernetisk Selskab (CYB) driver studentkjelleren Escape i Ole-Johan Dahls hus ved Universitetet i Oslo, hvor vi driver kafé på dagtid og pub hver fredag."/>
     <link rel="shortcut icon" href="favicon.ico"/>
     <title>Cybernetisk Selskab / Escape</title>
-    <link href="build/main.css" media="all" rel="stylesheet" type="text/css"/>
-    <script src="build/bundle.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300,400" rel="stylesheet">
 
     <!-- Twitter Card data -->
@@ -36,7 +38,7 @@
       <div class="flex-two">
         <div>
           <h2>Kommende arrangement</h2>
-          <div id="next-events-public">Du må aktivere javascript for å se kommende arrangementer</div>
+          <div id="next-events-public"><EventList client:only eventGroup="public" /></div>
         </div>
         <div>
           <h2>Bli frivillig</h2>
@@ -48,12 +50,12 @@
             Gjennom et verv i CYB blir du kjent med nye mennesker og opparbeider deg verdifull tverrfaglig
             erfaring.
           </p>
-          <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdnUkCb8c5LOaqLazyHe38aZRNwvBcynotXHs-koAIpPDUujw/viewform"">
+          <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdnUkCb8c5LOaqLazyHe38aZRNwvBcynotXHs-koAIpPDUujw/viewform">
             Skjema for å bli frivillig
           </a></p>
           <div>
             <p class="int-event-title">For interne holder vi kosetirsdager (hver tirsdag) kl 19, samt:</p>
-            <div id="next-events-intern">Du må aktivere javascript for å se kommende arrangementer</div>
+            <div id="next-events-intern"><EventList client:only eventGroup="intern" /></div>
           </div>
         </div>
       </div>
@@ -70,7 +72,7 @@
               gratis dersom de stiller med interne fra CYB som kan
               bemanne lokalet.
             </p>
-            <p><a href="/leie.html">LES MER OM LEIE AV ESCAPE</a></p>
+            <p><a href="/leie">LES MER OM LEIE AV ESCAPE</a></p>
           </div>
         </div>
         <div class="foredrag-par">

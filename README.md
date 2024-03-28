@@ -1,26 +1,13 @@
 # cyb.no
 
-## Quick start
-
-```bash
-# install dependencies
-yarn
-
-# build
-yarn run build
-
-# serve static files
-(cd public && python3 -m http.server 3000)
-```
-
 ## Development
 
 ```bash
 # install dependencies
-yarn
+npm ci
 
 # run development server
-yarn run dev
+npm run dev
 ```
 
 Access http://localhost:3000/ for the development version. Changes to

@@ -2,7 +2,11 @@
 ID = "cybno"
 
 [build]
-  environment = { NODE_VERSION = "18" }
+  publish = "dist/"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
 
 # REDIRECTS
 # - Note that all redirects will match on first hit, so be very careful

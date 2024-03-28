@@ -155,7 +155,7 @@ h3 {
   margin-bottom: 0;
 }
 
-#next-events-public > div >  ul:first-child > .name {
+#next-events-public .name {
   margin-top: inherit;
 }
 
@@ -207,18 +207,18 @@ ul {
   margin-bottom: 0;
 }
 
-#next-events-intern > div > ul > li {
+#next-events-intern ul > li {
   display: inline-block;
   margin: 0;
 }
 
-#next-events-intern > div > ul {
+#next-events-intern ul {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
 
-#next-events-intern > div > ul > .desc::after {
+#next-events-intern ul > .desc::after {
   content: ' ';
   white-space: pre;
 

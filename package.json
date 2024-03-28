@@ -2,32 +2,23 @@
   "name": "cybno",
   "version": "0.0.0-development",
   "description": "",
+  "type": "module",
   "scripts": {
     "test": "echo \"Warning: no test specified\" && exit 0",
-    "build": "NODE_ENV=production webpack",
-    "dev": "webpack serve"
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/domready": "1.0.2",
+    "@astrojs/react": "^3.1.0",
     "@types/react": "18.2.73",
     "@types/react-dom": "18.2.22",
-    "css-loader": "6.10.0",
-    "domready": "1.0.8",
-    "mini-css-extract-plugin": "2.8.1",
+    "astro": "^4.5.10",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hot-loader": "4.13.1",
     "sass": "1.72.0",
-    "sass-loader": "14.1.1",
-    "style-loader": "3.3.4",
-    "ts-loader": "9.5.1",
-    "ts-node": "10.9.2",
-    "typescript": "5.4.3",
-    "webpack": "5.91.0",
-    "webpack-cli": "5.1.4",
-    "webpack-dev-server": "5.0.4",
-    "whatwg-fetch": "3.6.2"
+    "typescript": "5.4.3"
   }
 }

@@ -1,13 +1,10 @@
-import domready from "domready"
 import React from "react"
-import ReactDOM from "react-dom"
-import { hot } from "react-hot-loader"
-import "./app.scss"
 
 const days = "Søndag_Mandag_Tirsdag_Onsdag_Torsdag_Fredag_Lørdag".split("_")
-const months = "januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember".split(
-  "_",
-)
+const months =
+  "januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember".split(
+    "_",
+  )
 
 interface UpcomingEvent {
   all_day: boolean
@@ -53,7 +50,7 @@ interface EventListState {
   eventsToShow: number
 }
 
-class EventList extends React.Component<EventListProps, EventListState> {
+export class EventList extends React.Component<EventListProps, EventListState> {
   constructor(props: EventListProps) {
     super(props)
     this.state = {
@@ -192,17 +189,3 @@ class EventList extends React.Component<EventListProps, EventListState> {
     )
   }
 }
-
-domready(() => {
-  let elm
-
-  if ((elm = document.getElementById("next-events-intern"))) {
-    const Events = hot(module)(() => <EventList eventGroup="intern" />)
-    ReactDOM.render(<Events />, elm)
-  }
-
-  if ((elm = document.getElementById("next-events-public"))) {
-    const Events = hot(module)(() => <EventList eventGroup="public" />)
-    ReactDOM.render(<Events />, elm)
-  }
-})
