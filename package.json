@@ -13,7 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "@astrojs/react": "3.1.0",
-    "@types/react": "18.2.73",
+    "@types/react": "18.2.74",
     "@types/react-dom": "18.2.23",
     "astro": "4.5.13",
     "react": "18.2.0",
