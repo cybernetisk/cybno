@@ -1,5 +1,8 @@
 # cyb.no
 
+## Archived
+As of August 2024, this repository has been replaced by a new implementation of cyb.no. The main repository for cyb.no can now be found [here](https://github.com/cybernetisk/internsystem-v2).
+
 ## Development
 
 ```bash
